@@ -13,7 +13,11 @@ def get_task(qid = -1):
 
 data = []
 
-for qid in range(0, 500):
+ID = 0
+st = ID * 250
+ed = st + 250
+
+for qid in range(st, ed):
   for i in range(20):
     try:
       print(qid, i, time.time() - start_time)
@@ -22,7 +26,7 @@ for qid in range(0, 500):
 
       data.append(payload)
       if len(data) % 5 == 4:
-        with open(f"0-500.json", "w") as f:
+        with open(f"{st}-{ed}.json", "w") as f:
           json.dump(data, f, indent=2)
 
     except:
