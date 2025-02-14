@@ -25,7 +25,7 @@ for qid in range(st, ed):
       payload["qid"] = qid
 
       data.append(payload)
-      if len(data) % 5 == 4:
+      if len(data) % 5 == 0:
         with open(f"{st}-{ed}.json", "w") as f:
           json.dump(data, f, indent=2)
 
