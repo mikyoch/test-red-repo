@@ -12,7 +12,7 @@ def get_task(qid = -1):
   response.raise_for_status()
   return response.json()
 
-ID = 0
+ID = 11
 st = ID * 250
 ed = st + 250
 
@@ -29,7 +29,7 @@ for qid in range(st, ed):
 
       data.append(payload)
       if len(data) % 5 == 0:
-        with open(f"qid.json", "w") as f:
+        with open(f"./{st}-{ed}/{qid}.json", "w") as f:
           json.dump(data, f, indent=2)
 
     except:
